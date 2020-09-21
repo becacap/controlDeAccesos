@@ -12,5 +12,5 @@ public interface CalendarioEmpleadoServiceInterface
 {
 	public void save(Calendario calendario, List<Estado> estados);
 	
-	public void update(int id_calendario,int id_empleado, int id_jornada, int id_estado);
+	public void update(Integer id_calendario,Integer id_empleado, Integer id_jornada, Integer id_estado);
 }
