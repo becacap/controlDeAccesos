@@ -7,7 +7,7 @@ import cap.curso.jpa.entidades.Usuario_Estado;
 import cap.curso.jpa.repositorios.UsuariosEstadoRepositoryInterface;
 
 @Service
-public class UsuariosEstadoService implements UsuariosEstadoInterface {
+public class UsuariosEstadoService implements UsuariosEstadoServiceInterface {
 
 	@Autowired
 	private UsuariosEstadoRepositoryInterface repositorio;
