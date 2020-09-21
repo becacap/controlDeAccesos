@@ -26,8 +26,7 @@ public class CalendarioService implements CalendarioServiceInterface
 
 	public Calendario save(Calendario calendario)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return getCalendarioRepository().save(calendario);
 	}
 
 	public void generaCalendarioAnyo(Integer anyo)
@@ -38,7 +37,8 @@ public class CalendarioService implements CalendarioServiceInterface
 
 	public Calendario updateCalendarioEstado(Integer idCalendario, Estado estado)
 	{
-		// TODO Auto-generated method stub
+		// Calendario calendario = getCalendarioRepository().findById(idCalendario);
+		// return getCalendarioRepository().save(calendario);
 		return null;
 	}
 
