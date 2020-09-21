@@ -13,7 +13,7 @@ public class UsuariosEstadoService implements UsuariosEstadoInterface {
 	private UsuariosEstadoRepositoryInterface repositorio;
 	
 	public Usuario_Estado getDiasTrabajadosEmpleadoByYearByMes(Integer idEmpleado, Integer year, Integer mes) {
-		return getRepositorio().diasTrabajados (idEmpleado, year, mes);
+		return getRepositorio().getUsuarioEstadoByEmpleado(idEmpleado, year, mes);
 		
 	}
 
