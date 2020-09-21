@@ -11,5 +11,5 @@ public interface UsuariosEstadoRepositoryInterface extends CrudRepository<Usuari
 {
 
 	@Query("from usuarios_estados r where r.empleados_id=:empleado_id")
-	public Usuario_Estado diasTrabajados(Integer empleado_id, Integer month, Integer year);
+	public Usuario_Estado getUsuarioEstadoByEmpleado(Integer empleado_id, Integer month, Integer year);
 }
