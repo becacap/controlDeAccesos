@@ -18,7 +18,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 @Configuration
 @ComponentScan({ "cap.curso.jpa" })
-@EnableJpaRepositories("cap.curso.jpa.repositorios")
+@EnableJpaRepositories("cap.curso.jpa.calendario.repositorios")
 @PropertySource("classpath:application.properties")
 public class Configuracion
 {
@@ -30,7 +30,7 @@ public class Configuracion
 	{
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName(getEnvironment().getProperty("driver"));
-		dataSource.setUrl(getEnvironment().getProperty("url"));
+		dataSource.setUrl(getEnvironment().getProperty("url2"));
 		dataSource.setUsername(getEnvironment().getProperty("usuario"));
 		dataSource.setPassword(getEnvironment().getProperty("clave"));
 
