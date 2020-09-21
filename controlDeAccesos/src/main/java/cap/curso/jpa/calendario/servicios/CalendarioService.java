@@ -37,9 +37,8 @@ public class CalendarioService implements CalendarioServiceInterface
 
 	public Calendario updateCalendarioEstado(Integer idCalendario, Estado estado)
 	{
-		// Calendario calendario = getCalendarioRepository().findById(idCalendario);
-		// return getCalendarioRepository().save(calendario);
-		return null;
+		Calendario calendario = getCalendarioRepository().findById(idCalendario);
+		return getCalendarioRepository().save(calendario);
 	}
 
 }

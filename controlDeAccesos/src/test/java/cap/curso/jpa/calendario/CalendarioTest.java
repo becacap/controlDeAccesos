@@ -39,5 +39,14 @@ public class CalendarioTest
 		calendarioService.save(calendario);
 		// Assert.fail();
 	}
+	
+	@Test
+	public void calendarioUpdateTest() {
+		Estado estado = new Estado();
+		estado.setId(2);
+		estado.setDescripcion("Festivo");
+		
+		calendarioService.updateCalendarioEstado(1, estado);
+	}
 
 }
