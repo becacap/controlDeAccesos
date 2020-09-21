@@ -10,11 +10,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import cap.curso.jpa.configuracion.Configuracion;
 import cap.curso.jpa.services.UsuariosEstadoServiceInterface;
-import cap.curso.jpa.servicios.JPAServiceUsuarioInterface;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = Configuracion.class)
-public class TestFichajes
+public class TestFichajesR
 {
 
 	@Autowired
