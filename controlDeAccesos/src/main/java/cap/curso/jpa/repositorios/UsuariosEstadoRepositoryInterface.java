@@ -10,6 +10,6 @@ import cap.curso.jpa.entidades.Usuario_Estado;
 public interface UsuariosEstadoRepositoryInterface extends CrudRepository<Usuario_Estado, Integer>
 {
 
-	@Query("from ((usuarios_estados r natural join estados e) natural join jornadas) where r.empleados_id=:empleado_id and e.descripcion='laborable'")
+	@Query("from ((Usuario_Estado r natural join Estado e) natural join Jornada) where r.empleados_id=:empleado_id and e.descripcion='laborable'")
 	public Usuario_Estado getUsuarioEstadoByEmpleado(Integer empleado_id, Integer month, Integer year);
 }

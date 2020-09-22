@@ -22,13 +22,13 @@ public class TestFichajesM
 	@Test
 	public void testTodoCorrecto()
 	{
-		assertNotNull(usuariosEstadoService.getDiasTrabajadosEmpleadoByYearByMes(1, 2019, 2));;
+		assertNotNull(usuariosEstadoService.getDiasTrabajadosEmpleadoByYearByMes(1, 2015, 3));
 	}
 	
 	@Test
 	public void testMesMal()
 	{
-		assertNull(usuariosEstadoService.getDiasTrabajadosEmpleadoByYearByMes(1, 2019, 22));;
+		assertNull(usuariosEstadoService.getDiasTrabajadosEmpleadoByYearByMes(1, 2015, 22));
 	}
 
 }
