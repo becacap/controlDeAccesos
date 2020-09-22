@@ -17,6 +17,8 @@ import cap.curso.jpa.calendario.servicios.CalendarioServiceInterface;
 import cap.curso.jpa.configuracion.Configuracion;
 import cap.curso.jpa.entidades.Calendario;
 import cap.curso.jpa.entidades.Estado;
+import cap.curso.jpa.estado.exception.EstadoNotFoundException;
+import cap.curso.jpa.estado.servicios.EstadosServiceInterface;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = Configuracion.class)
@@ -26,6 +28,9 @@ public class CalendarioTest
 	@Autowired
 	private CalendarioServiceInterface calendarioService;
 
+	@Autowired
+	private EstadosServiceInterface estadosService;
+
 	public CalendarioServiceInterface getCalendarioService()
 	{
 		return calendarioService;
@@ -34,6 +39,16 @@ public class CalendarioTest
 	public void setCalendarioService(CalendarioServiceInterface calendarioService)
 	{
 		this.calendarioService = calendarioService;
+	}
+
+	public EstadosServiceInterface getEstadosService()
+	{
+		return estadosService;
+	}
+
+	public void setEstadosService(EstadosServiceInterface estadosService)
+	{
+		this.estadosService = estadosService;
 	}
 
 	// @Test
@@ -83,38 +98,38 @@ public class CalendarioTest
 	// @Test
 	public void calendarioUpdateOkTest() throws CalendarioNotFoundException
 	{
-
 		Estado estado = new Estado();
 		estado.setDescripcion("Laborable");
 		estado.setId(1);
 
 		Calendario result = calendarioService.updateCalendarioEstado(8, estado);
-
 	}
 
 	// @Test(expected = CalendarioNotFoundException.class)
 	public void calendarioUpdateNoOkTest() throws CalendarioNotFoundException
 	{
-
 		Estado estado = new Estado();
 		estado.setDescripcion("Laborable");
 		estado.setId(1);
 
 		Calendario result = calendarioService.updateCalendarioEstado(232, estado);
-
 	}
 
-	@Test
-	public void calendarioGenerarOkTest() throws CalendarioAlreadyExistsException
+	// @Test
+	public void calendarioGenerarOkTest() throws CalendarioAlreadyExistsException, EstadoNotFoundException
 	{
-		Integer anyo = 2021;
+		Integer anyo = 2020;
 
 		Iterable<Calendario> lista = getCalendarioService().generaCalendarioAnyo(anyo);
 
-		for (Calendario c : lista)
-		{
-			System.out.println(c.getId());
-		}
+	}
+
+	@Test(expected = CalendarioAlreadyExistsException.class)
+	public void calendarioGenerarNoOkTest() throws CalendarioAlreadyExistsException, EstadoNotFoundException
+	{
+		Integer anyo = 2020;
+
+		Iterable<Calendario> lista = getCalendarioService().generaCalendarioAnyo(anyo);
 	}
 
 }
