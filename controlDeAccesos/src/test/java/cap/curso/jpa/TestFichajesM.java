@@ -20,17 +20,15 @@ public class TestFichajesM
 	private UsuariosEstadoServiceInterface usuariosEstadoService;
 	
 	@Test
-	public void test()
+	public void testTodoCorrecto()
 	{
-		fail("Not yet implemented");
+		assertNotNull(usuariosEstadoService.getDiasTrabajadosEmpleadoByYearByMes(1, 2019, 2));;
 	}
-
-	public UsuariosEstadoServiceInterface getUsuariosEstadoService() {
-		return usuariosEstadoService;
-	}
-
-	public void setUsuariosEstadoService(UsuariosEstadoServiceInterface usuariosEstadoService) {
-		this.usuariosEstadoService = usuariosEstadoService;
+	
+	@Test
+	public void testMesMal()
+	{
+		assertNull(usuariosEstadoService.getDiasTrabajadosEmpleadoByYearByMes(1, 2019, 22));;
 	}
 
 }
