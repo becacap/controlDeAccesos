@@ -30,16 +30,6 @@ public class Jornada
 	@Column
 	private String miercoles;
 
-	public String getViernes()
-	{
-		return viernes;
-	}
-
-	public void setViernes(String viernes)
-	{
-		this.viernes = viernes;
-	}
-
 	@Column
 	private String jueves;
 	
@@ -114,6 +104,16 @@ public class Jornada
 	public void setJueves(String jueves)
 	{
 		this.jueves = jueves;
+	}
+	
+	public String getViernes()
+	{
+		return viernes;
+	}
+
+	public void setViernes(String viernes)
+	{
+		this.viernes = viernes;
 	}
 
 	public String getDescripcion()

@@ -1,5 +1,7 @@
 package cap.curso.jpa.servicios;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import cap.curso.jpa.entidades.Jornada;
@@ -12,5 +14,5 @@ public interface JPAJornadaServiceInterface
 	
 	public Iterable<Jornada> findAll();
 	
-	public Iterable<Jornada> findById();
+	public Optional<Jornada> findById(Integer id);
 }

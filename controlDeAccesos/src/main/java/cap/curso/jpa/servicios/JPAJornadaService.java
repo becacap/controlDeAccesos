@@ -1,40 +1,50 @@
 package cap.curso.jpa.servicios;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cap.curso.jpa.entidades.Jornada;
+import cap.curso.jpa.repositorios.JornadaRepositoryInterface;
 
 @Service
 public class JPAJornadaService implements JPAJornadaServiceInterface
 {
 	@Autowired
-	JPAJornadaServiceInterface jornadaServiceInterface;
+	JornadaRepositoryInterface jornadaRepositoryInterface;
 
 	public Jornada save(Jornada jornada)
 	{
-		return getJornadaServiceInterface().save(jornada);
+		return getJornadaRepositoryInterface().save(jornada);
 	}
 
 	public Iterable<Jornada> findAll()
 	{
-		return getJornadaServiceInterface().findAll();
+		return getJornadaRepositoryInterface().findAll();
 	}
 
-	public Iterable<Jornada> findById()
+	
+	
+
+	public JornadaRepositoryInterface getJornadaRepositoryInterface()
 	{
-		return getJornadaServiceInterface().findById();
+		return jornadaRepositoryInterface;
 	}
 
-	public JPAJornadaServiceInterface getJornadaServiceInterface()
+	public void setJornadaRepositoryInterface(JornadaRepositoryInterface jornadaRepositoryInterface)
 	{
-		return jornadaServiceInterface;
+		this.jornadaRepositoryInterface = jornadaRepositoryInterface;
 	}
 
-	public void setJornadaServiceInterface(JPAJornadaServiceInterface jornadaServiceInterface)
+	public Optional<Jornada> findById(Integer id)
 	{
-		this.jornadaServiceInterface = jornadaServiceInterface;
+		// TODO Auto-generated method stub
+		return getJornadaRepositoryInterface().findById(id);
 	}
+
+
+	
 	
 	
 
