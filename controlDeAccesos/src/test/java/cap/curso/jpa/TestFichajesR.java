@@ -17,8 +17,8 @@ import cap.curso.jpa.services.UsuariosEstadoServiceInterface;
 public class TestFichajesR
 {
 
-//	@Autowired
-//	private UsuariosEstadoServiceInterface usuariosEstadoService;
+	@Autowired
+	private UsuariosEstadoServiceInterface usuariosEstadoService;
 	
 	@Test
 	public void testWrongMes ()
@@ -27,7 +27,7 @@ public class TestFichajesR
 		int year 		= 2018; // Year correcto
 		int mes 		= 15; 	// Mes incorrecto
 		
-//		Usuario_Estado ue = getUsuariosEstadoService().getDiasTrabajadosEmpleadoByYearByMes (idEmpleado, year, mes);
+//		Usuario_Estado ue = getUsuariosEstadoService().getDiasTrabajadosEmpleadoByYearByMes (getDiasTrabajadosEmpleadoByYearByMes (idEmpleado, year, mes);
 	}
 	
 //	@Test
@@ -40,12 +40,12 @@ public class TestFichajesR
 //		¿ assertThrown ? ( getUsuariosEstadoService().getDiasTrabajadosEmpleadoByYearByMes (idEmpleado, year, mes) );
 	}
 
-//	public UsuariosEstadoServiceInterface getUsuariosEstadoService() {
-//		return usuariosEstadoService;
-//	}
-//
-//	public void setUsuariosEstadoService(UsuariosEstadoServiceInterface usuariosEstadoService) {
-//		this.usuariosEstadoService = usuariosEstadoService;
-//	}
+	public UsuariosEstadoServiceInterface getUsuariosEstadoService() {
+		return usuariosEstadoService;
+	}
+
+	public void setUsuariosEstadoService(UsuariosEstadoServiceInterface usuariosEstadoService) {
+		this.usuariosEstadoService = usuariosEstadoService;
+	}
 
 }
