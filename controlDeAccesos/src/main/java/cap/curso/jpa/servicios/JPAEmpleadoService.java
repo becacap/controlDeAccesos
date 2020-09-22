@@ -2,12 +2,16 @@ package cap.curso.jpa.servicios;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import cap.curso.jpa.entidades.Empleado;
 import cap.curso.jpa.repositorios.EmpleadoRepositoryInterface;
 
+@Service
 public class JPAEmpleadoService implements JPAEmpleadoServiceInterface
 {
-
+	@Autowired
 	private EmpleadoRepositoryInterface empleadoRepo;
 	
 	public Empleado save(Empleado empleado)
