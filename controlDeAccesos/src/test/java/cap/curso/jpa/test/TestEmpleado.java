@@ -1,5 +1,6 @@
 package cap.curso.jpa.test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import java.sql.Date;
@@ -17,6 +18,7 @@ import cap.curso.jpa.entidades.Empleado;
 import cap.curso.jpa.entidades.Jornada;
 import cap.curso.jpa.servicios.JPAEmpleadoService;
 import cap.curso.jpa.servicios.JPAEmpleadoServiceInterface;
+import cap.curso.jpa.servicios.JPAJornadaServiceInterface;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = Configuracion.class)
@@ -27,7 +29,8 @@ public class TestEmpleado
 	@Autowired
 	private JPAEmpleadoServiceInterface jpaEmpleadoSI;
 
-	
+	@Autowired
+	private JPAJornadaServiceInterface jpaJornadaSI;
 	
 //	@Test
 	public void crearEmpleado(){
@@ -59,33 +62,22 @@ public class TestEmpleado
 	
 	@Test
 	public void testModificarJornada() {
-		Jornada jornada2 = new Jornada();
-		jornada2.setLunes("9h-16h");
-		jornada2.setMartes("9h-16h");
-		jornada2.setMiercoles("9h-16h");
-		jornada2.setJueves("9h-16h");
-		jornada2.setViernes("9h-16h");
-		jornada2.setDescripcion("Maña-Tarde");
-		Empleado empleado = new Empleado();
-		empleado.setNombre("Juanito");
-		empleado.setApellidos("G");
-		empleado.setDni("34249867D");
-		empleado.setIdentificador("11111111");
-		empleado.setFecha_alta(new Date(998888));
-		empleado.setJornada(jornada2);
-		Empleado empleadoSinCambios = empleado;
-		Jornada jornada = new Jornada();
-		jornada.setLunes("9h-15h");
-		jornada.setMartes("9h-15h");
-		jornada.setMiercoles("9h-15h");
-		jornada.setJueves("9h-15h");
-		jornada.setViernes("9h-15h");
-		jornada.setDescripcion("Mañana");
-		jornada.setEspecial(0);
-		jpaEmpleadoSI.modificarJornada(empleado,jornada);
-		System.out.println(empleado.getJornada().getId());
-		System.out.println(empleadoSinCambios.getJornada().getId());
-		assertNotEquals(empleado.getJornada().getId(), empleadoSinCambios.getJornada().getId());
+		Jornada jornadaNueva = new Jornada();
+		jornadaNueva.setLunes("9.00-20.00");
+		jornadaNueva.setMartes("9.00-20.00");
+		jornadaNueva.setMiercoles("9.00-20.00");
+		jornadaNueva.setJueves("9.00-20.00");
+		jornadaNueva.setViernes("9.00-20.00");
+		jornadaNueva.setDescripcion("Jornada completa");
+		jpaJornadaSI.save(jornadaNueva);
+		
+		Optional<Empleado> empleado = jpaEmpleadoSI.findById(1);
+		int jornada1_id = empleado.get().getJornada().getId();
+		Empleado empleado1 = jpaEmpleadoSI.modificarJornada(empleado.get(), jornadaNueva);
+		
+		assertEquals(empleado.get().getId(), empleado1.getId());
+		assertNotEquals(jornada1_id, empleado1.getJornada().getId());
+
 	}
 
 	public JPAEmpleadoServiceInterface getJpaEmpleadoSI()

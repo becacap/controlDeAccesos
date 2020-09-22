@@ -31,7 +31,6 @@ public class JPAEmpleadoService implements JPAEmpleadoServiceInterface
 	}
 	
 	public Empleado modificarJornada(Empleado empleado, Jornada jornada) {
-		empleadoRepo.findById(empleado.getId());
 		empleado.setJornada(jornada);
 		empleadoRepo.save(empleado);
 		return empleado;
