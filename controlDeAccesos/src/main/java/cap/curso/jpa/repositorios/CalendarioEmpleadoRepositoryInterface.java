@@ -1,4 +1,4 @@
-package cap.curso.jpa.calendario_empleado.repositorios;
+package cap.curso.jpa.repositorios;
 
 import java.util.List;
 
