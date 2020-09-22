@@ -3,3 +3,5 @@ pom.xml
 .settings
 .classpath
 .project
+.MF
+pom.properties
