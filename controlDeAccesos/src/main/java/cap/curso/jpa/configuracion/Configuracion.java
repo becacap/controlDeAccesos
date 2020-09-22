@@ -18,7 +18,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 @Configuration
 @ComponentScan({ "cap.curso.jpa" })
-@EnableJpaRepositories("cap.curso.jpa.repositorios")
+@EnableJpaRepositories("cap.curso.jpa.calendario_empleado.repositorios")
 @PropertySource("classpath:application.properties")
 public class Configuracion
 {
