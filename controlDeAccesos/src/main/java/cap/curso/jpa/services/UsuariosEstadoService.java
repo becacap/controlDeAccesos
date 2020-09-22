@@ -15,8 +15,9 @@ public class UsuariosEstadoService implements UsuariosEstadoServiceInterface {
 	private UsuariosEstadoRepositoryInterface repositorio;
 	
 	public Usuario_Estado getDiasTrabajadosEmpleadoByYearByMes (Empleado empleado, Calendario cal) {
-		return getRepositorio().getUsuarioEstadoByEmpleado (empleado, cal);
+		Usuario_Estado ue = getRepositorio().getUsuarioEstadoByEmpleado (empleado, cal);
 		
+		return null;
 	}
 
 	public UsuariosEstadoRepositoryInterface getRepositorio() {
