@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -42,19 +43,8 @@ public class Jornada
 	@Column
 	private int especial;
 
-	@ManyToMany
-	@JoinTable(name = "empleado_jornadas", joinColumns = @JoinColumn(name = "jornadas_id"), inverseJoinColumns = @JoinColumn(name = "empleados_id"))
-	private List<Empleado> empleados;
+	
 
-	public List<Empleado> getEmpleados()
-	{
-		return empleados;
-	}
-
-	public void setEmpleados(List<Empleado> empleados)
-	{
-		this.empleados = empleados;
-	}
 
 	public int getId()
 	{

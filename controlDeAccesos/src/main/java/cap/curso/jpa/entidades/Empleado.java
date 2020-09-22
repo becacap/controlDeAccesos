@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -44,20 +45,9 @@ public class Empleado
 	@Column
 	private Date fecha_baja;
 	
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "empleado_jornadas", joinColumns = @JoinColumn(name = "empleados_id"), inverseJoinColumns = @JoinColumn(name = "jornadas_id"))
-	private List<Jornada> jornadas;
-	
-
-	public List<Jornada> getJornadas()
-	{
-		return jornadas;
-	}
-
-	public void setJornadas(List<Jornada> jornadas)
-	{
-		this.jornadas = jornadas;
-	}
+	@ManyToOne
+	@JoinColumn(name="jornada_id")
+	private Jornada jornada;
 
 	public int getId()
 	{
