@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cap.curso.jpa.calendario_empleado.repositorios.CalendarioEmpleadoRepositoryInterface;
 import cap.curso.jpa.entidades.Calendario;
 import cap.curso.jpa.entidades.Estado;
 
@@ -12,28 +13,31 @@ import cap.curso.jpa.entidades.Estado;
 public class CalendarioEmpleadoService implements CalendarioEmpleadoServiceInterface
 {
 	@Autowired
-	//Cambiar Service por Repository
-	private CalendarioEmpleadoServiceInterface calendarioEmpleadoServiceInterface;
-	public void save(Calendario calendario, List<Estado> estados)
+	private CalendarioEmpleadoRepositoryInterface calendarioEmpleadoRepository;
+	
+	public Calendario save(Calendario calendario, List<Estado> estados)
 	{
-		getCalendarioEmpleadoServiceInterface().save(calendario, estados);
+		return getCalendarioEmpleadoRepository().save(calendario, estados);
 
 	}
 
 	public void update(Integer id_calendario, Integer id_empleado, Integer id_jornada, Integer id_estado)
 	{
-		getCalendarioEmpleadoServiceInterface().update(id_calendario, id_empleado, id_jornada, id_estado);
+		getCalendarioEmpleadoRepository().update(id_calendario, id_empleado, id_jornada, id_estado);
 
 	}
 
-	public CalendarioEmpleadoServiceInterface getCalendarioEmpleadoServiceInterface()
+	public CalendarioEmpleadoRepositoryInterface getCalendarioEmpleadoRepository()
 	{
-		return calendarioEmpleadoServiceInterface;
+		return calendarioEmpleadoRepository;
 	}
 
-	public void setCalendarioEmpleadoServiceInterface(CalendarioEmpleadoServiceInterface calendarioEmpleadoServiceInterface)
+	public void setCalendarioEmpleadoRepository(CalendarioEmpleadoRepositoryInterface calendarioEmpleadoRepository)
 	{
-		this.calendarioEmpleadoServiceInterface = calendarioEmpleadoServiceInterface;
+		this.calendarioEmpleadoRepository = calendarioEmpleadoRepository;
 	}
+
+	
+	
 
 }

@@ -16,7 +16,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import cap.curso.jpa.configuracion.Configuracion;
 import cap.curso.jpa.entidades.Calendario;
+import cap.curso.jpa.entidades.Empleado;
 import cap.curso.jpa.entidades.Estado;
+import cap.curso.jpa.entidades.Jornada;
 import cap.curso.jpa.servicios.CalendarioEmpleadoServiceInterface;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -25,10 +27,12 @@ public class TestUpdate
 {
 	@Autowired
 	private CalendarioEmpleadoServiceInterface calendarioEmpleado;
-	@Test
+
+	//@Test
 	public void testSave()
 	{
-		Date fecha = new Date(01, 01, 2020);
+		GregorianCalendar gregorianCalendar = new GregorianCalendar(2020, 9, 21);
+		Date fecha = new Date(gregorianCalendar.getTime().getTime());
 		Calendario calendario = new Calendario();
 		calendario.setId(1);
 		calendario.setFecha(fecha);
@@ -47,15 +51,39 @@ public class TestUpdate
 		estados.add(e3);
 		getCalendarioEmpleado().save(calendario, estados);
 	}
-	
-	
+
 	public CalendarioEmpleadoServiceInterface getCalendarioEmpleado()
 	{
 		return calendarioEmpleado;
 	}
+
 	public void setCalendarioEmpleado(CalendarioEmpleadoServiceInterface calendarioEmpleado)
 	{
 		this.calendarioEmpleado = calendarioEmpleado;
+	}
+
+	@Test
+	public void testUpdate()
+	{
+		
+		GregorianCalendar gregorianCalendar = new GregorianCalendar(2020, 9, 21);
+		Date fecha = new Date(gregorianCalendar.getTime().getTime());
+		
+		Calendario calendario = new Calendario();
+		calendario.setId(1);
+		calendario.setFecha(fecha);		
+		
+		Empleado empleado = new Empleado();
+		empleado.setId(1);
+		
+		Jornada jornada = new Jornada();
+		jornada.setId(1);
+		
+		Estado estado = new Estado();
+		estado.setId(1);
+		
+		getCalendarioEmpleado().update(calendario.getId(), empleado.getId(), jornada.getId(), estado.getId());
+		
 	}
 
 }
