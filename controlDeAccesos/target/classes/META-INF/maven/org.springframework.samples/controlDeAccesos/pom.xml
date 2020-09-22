@@ -3,7 +3,7 @@
   <groupId>org.springframework.samples</groupId>
   <artifactId>controlDeAccesos</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
+   
   <properties>
 
 		<!-- Generic properties -->
@@ -85,6 +85,7 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.4.21.Final</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
@@ -97,5 +98,6 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
 	</dependencies>	
 </project>
