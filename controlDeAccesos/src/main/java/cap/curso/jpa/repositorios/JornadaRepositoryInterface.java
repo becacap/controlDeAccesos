@@ -12,15 +12,4 @@ import org.springframework.data.repository.CrudRepository;
 public interface JornadaRepositoryInterface extends CrudRepository<Jornada, Integer>
 {
 
-	<S extends Jornada> S save(S entity);
-
-	
-	Optional<Jornada> findById(Integer id);
-
-	
-
-	Iterable<Jornada> findAll();
-
-
-
 }
