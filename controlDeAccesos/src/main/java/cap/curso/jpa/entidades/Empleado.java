@@ -49,6 +49,16 @@ public class Empleado
 	@JoinColumn(name="jornada_id")
 	private Jornada jornada;
 
+	public Jornada getJornada()
+	{
+		return jornada;
+	}
+
+	public void setJornada(Jornada jornada)
+	{
+		this.jornada = jornada;
+	}
+
 	public int getId()
 	{
 		return id;
