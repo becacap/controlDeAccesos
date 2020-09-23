@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import cap.curso.jpa.entidades.Empleado;
+import cap.curso.jpa.entidades.Jornada;
 
 @Service
 public interface JPAEmpleadoServiceInterface
@@ -14,4 +15,6 @@ public interface JPAEmpleadoServiceInterface
 	public Iterable<Empleado> findAll();
 	
 	public Optional<Empleado> findById(Integer id);
+	
+	public Empleado modificarJornada(Empleado idEmpleado, Jornada idJornada);
 }

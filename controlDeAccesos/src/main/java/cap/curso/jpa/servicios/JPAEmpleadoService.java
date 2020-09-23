@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cap.curso.jpa.entidades.Empleado;
+import cap.curso.jpa.entidades.Jornada;
 import cap.curso.jpa.repositorios.EmpleadoRepositoryInterface;
 
 @Service
@@ -27,6 +28,12 @@ public class JPAEmpleadoService implements JPAEmpleadoServiceInterface
 
 	public Optional<Empleado> findById(Integer id) {
 		return getEmpleadoRepo().findById(id);
+	}
+	
+	public Empleado modificarJornada(Empleado empleado, Jornada jornada) {
+		empleado.setJornada(jornada);
+		empleadoRepo.save(empleado);
+		return empleado;
 	}
 	
 //	############ GETTER && SETTER  ###########################
