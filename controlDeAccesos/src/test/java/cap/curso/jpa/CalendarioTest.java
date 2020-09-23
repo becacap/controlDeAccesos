@@ -1,4 +1,4 @@
-package cap.curso.jpa.calendario;
+package cap.curso.jpa;
 
 import java.sql.Date;
 import java.util.Calendar;

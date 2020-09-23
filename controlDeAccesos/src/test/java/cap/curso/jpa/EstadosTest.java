@@ -1,4 +1,4 @@
-package cap.curso.jpa.estados;
+package cap.curso.jpa;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
