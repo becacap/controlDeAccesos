@@ -86,7 +86,6 @@
 			<version>5.4.21.Final</version>
 		</dependency>
 		
-<<<<<<< HEAD
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
@@ -100,7 +99,5 @@
 			<scope>test</scope>
 		</dependency>
 		
-=======
->>>>>>> refs/remotes/origin/feature-calendario
 	</dependencies>	
 </project>
