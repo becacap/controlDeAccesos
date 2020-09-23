@@ -18,6 +18,19 @@ public class Estado
 	
 	@Column
 	private String descripcion;
+	
+	@Column
+	private int tipo;
+
+	public int getTipo()
+	{
+		return tipo;
+	}
+
+	public void setTipo(int tipo)
+	{
+		this.tipo = tipo;
+	}
 
 	public int getId()
 	{
