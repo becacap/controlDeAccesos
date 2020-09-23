@@ -23,7 +23,7 @@ public class TestFichajesM
 	@Autowired
 	private UsuariosEstadoServiceInterface usuariosEstadoService;
 	
-	@Test
+	/*@Test
 	public void testTodoCorrecto()
 	{
 		Empleado empleado = new Empleado();
@@ -47,6 +47,6 @@ public class TestFichajesM
 		Calendario calendario = new Calendario();
 		calendario.setFecha(new Date(01, 22, 2016));
 		assertNull(usuariosEstadoService.getDiasTrabajadosEmpleadoByYearByMes(empleado,calendario));
-	}
+	}*/
 
 }
