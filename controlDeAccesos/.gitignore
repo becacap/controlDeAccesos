@@ -1,6 +1,6 @@
 
 pom.xml
-/target/
+/target/*
 .settings
 .classpath
 .project
