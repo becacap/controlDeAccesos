@@ -1,7 +1,8 @@
+
 pom.xml
 /target/
 .settings
 .classpath
 .project
-.MF
+*.MF
 pom.properties
