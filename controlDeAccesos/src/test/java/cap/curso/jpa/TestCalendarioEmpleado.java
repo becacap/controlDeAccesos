@@ -32,6 +32,38 @@ public class TestCalendarioEmpleado
 	@Test
 	public void testSave()
 	{
+		Usuario_Estado usuario_Estado = new Usuario_Estado();
+		
+		Empleado empleado = new Empleado();
+		empleado.setNombre("Juanito");
+		empleado.setApellidos("G");
+		empleado.setDni("34249867D");
+		empleado.setIdentificador("11111111");
+		empleado.setFecha_alta(new Date(998888));
+		
+		Calendario calendario = new Calendario();
+		GregorianCalendar gregorianCalendar = new GregorianCalendar(2020, 9, 21);
+		Date fecha = new Date(gregorianCalendar.getTime().getTime());
+		calendario.setFecha(fecha);
+		
+		Estado estado = new Estado(); 
+		estado.setId(1);
+		estado.setDescripcion("Festivo");
+		
+		Jornada jornada = new Jornada();
+		jornada.setDescripcion("Jornada Completa");
+		jornada.setLunes("8:00-14:00&15:00-17:30");
+		jornada.setMartes("8:00-14:00&15:00-17:30");
+		jornada.setMiercoles("8:00-14:00&15:00-17:30");
+		jornada.setJueves("8:00-14:00&15:00-17:30");
+		jornada.setViernes("8:00-15:00");
+		jornada.setEspecial(0);
+		
+		usuario_Estado.setEmpleado(empleado);
+		usuario_Estado.setCalendario(calendario);
+		usuario_Estado.setEstado(estado);
+		usuario_Estado.setJornada(jornada);
+		usuario_Estado = getCalendarioEmpleado().save(usuario_Estado);
 		// enero1 = getCalendario()byYear();
 		// getEmpleadobyId();
 
@@ -71,7 +103,42 @@ public class TestCalendarioEmpleado
 	@Test
 	public void testUpdateEstado()
 	{
-
+		Usuario_Estado usuario_estado = new Usuario_Estado();
+		Empleado empleado = new Empleado();
+		empleado.setNombre("Juanito");
+		empleado.setApellidos("G");
+		empleado.setDni("34249867D");
+		empleado.setIdentificador("11111111");
+		empleado.setFecha_alta(new Date(998888));
+		
+		Calendario calendario = new Calendario();
+		GregorianCalendar gregorianCalendar = new GregorianCalendar(2020, 9, 21);
+		Date fecha = new Date(gregorianCalendar.getTime().getTime());
+		calendario.setFecha(fecha);
+		
+		Estado estado = new Estado(); 
+		estado.setId(1);
+		estado.setDescripcion("Festivo");
+		
+		Jornada jornada = new Jornada();
+		jornada.setDescripcion("Jornada Completa");
+		jornada.setLunes("8:00-14:00&15:00-17:30");
+		jornada.setMartes("8:00-14:00&15:00-17:30");
+		jornada.setMiercoles("8:00-14:00&15:00-17:30");
+		jornada.setJueves("8:00-14:00&15:00-17:30");
+		jornada.setViernes("8:00-15:00");
+		jornada.setEspecial(0);
+		
+		usuario_estado.setEmpleado(empleado);
+		usuario_estado.setCalendario(calendario);
+		usuario_estado.setEstado(estado);
+		usuario_estado.setJornada(jornada);
+		
+		getCalendarioEmpleado().update(usuario_estado.getCalendario().getId(), 
+				usuario_estado.getEmpleado().getId(),
+				usuario_estado.getJornada().getId(), 
+				usuario_estado.getEstado().getId());
+		
 		/*
 		 * Calendario calendario = getCalendarioById(); Empleado empleado =
 		 * getEmpleadoById(); Jornada jornada = getJornadaById();
