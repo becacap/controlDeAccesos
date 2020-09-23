@@ -17,8 +17,10 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 @Configuration
-@ComponentScan({ "cap.curso.jpa" })
-@EnableJpaRepositories("cap.curso.jpa.repositorios")
+@ComponentScan(
+{ "cap.curso.jpa" })
+@EnableJpaRepositories(
+{ "cap.curso.jpa" })
 @PropertySource("classpath:application.properties")
 public class Configuracion
 {
@@ -52,7 +54,8 @@ public class Configuracion
 		Properties jpaProperties = new Properties();
 		jpaProperties.put("hibernate.show_sql", getEnvironment().getProperty("show_sql"));
 		jpaProperties.put("hibernate.format_sql", getEnvironment().getProperty("format_sql"));
-		jpaProperties.put("hibernate.id.new_generator_mappings", getEnvironment().getProperty("hibernate.id.new_generator_mappings"));
+		jpaProperties.put("hibernate.id.new_generator_mappings",
+				getEnvironment().getProperty("hibernate.id.new_generator_mappings"));
 
 		localContainerEntityManagerFactoryBean.setJpaProperties(jpaProperties);
 

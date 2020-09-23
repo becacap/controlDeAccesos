@@ -1,4 +1,4 @@
-package cap.curso.jpa.calendario_empleado;
+package cap.curso.jpa;
 
 import static org.junit.Assert.*;
 
