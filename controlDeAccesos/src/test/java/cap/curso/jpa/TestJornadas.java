@@ -1,4 +1,4 @@
-package cap.curso.controlDeAccesos;
+package cap.curso.jpa;
 
 import java.util.List;
 import java.util.Optional;

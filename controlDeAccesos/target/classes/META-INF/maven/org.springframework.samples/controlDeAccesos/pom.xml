@@ -85,6 +85,8 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.4.21.Final</version>
 		</dependency>
+		
+<<<<<<< HEAD
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
@@ -97,5 +99,8 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
+=======
+>>>>>>> feature-fichajes
 	</dependencies>	
 </project>
