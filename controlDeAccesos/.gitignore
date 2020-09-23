@@ -1,0 +1,11 @@
+<<<<<<< HEAD
+/pom.xml
+=======
+pom.xml
+/target/
+.settings
+.classpath
+.project
+.MF
+pom.properties
+>>>>>>> branch 'develop' of https://github.com/becacap/controlDeAccesos.git
