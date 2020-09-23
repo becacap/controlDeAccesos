@@ -3,7 +3,7 @@ pom.xml
 
 /target/
 */target/**
-**/META-INF/
+**/META-INF/**
 !.mvn/wrapper/maven-wrapper.jar
 
 *.settings
