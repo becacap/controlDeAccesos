@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS `accesos`.`jornadas` (
   `especial` TINYINT(4) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -42,10 +43,18 @@ CREATE TABLE IF NOT EXISTS `accesos`.`empleados` (
   `identificador` VARCHAR(100) NULL DEFAULT NULL,
   `fecha_alta` DATETIME NULL DEFAULT NULL,
   `fecha_baja` DATETIME NULL DEFAULT NULL,
+  `jornadas_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `dni` (`dni` ASC),
-  UNIQUE INDEX `IDENTIFICADOR` (`identificador` ASC))
+  UNIQUE INDEX `IDENTIFICADOR` (`identificador` ASC),
+  INDEX `fk_empleados_jornadas1_idx` (`jornadas_id` ASC),
+  CONSTRAINT `fk_empleados_jornadas1`
+    FOREIGN KEY (`jornadas_id`)
+    REFERENCES `accesos`.`jornadas` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
+AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -55,8 +64,10 @@ DEFAULT CHARACTER SET = latin1;
 CREATE TABLE IF NOT EXISTS `accesos`.`estados` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(45) NOT NULL,
+  `tipo` INT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = latin1;
 
 
@@ -138,30 +149,6 @@ CREATE TABLE IF NOT EXISTS `accesos`.`accesos` (
   CONSTRAINT `fk_accesos_empleados`
     FOREIGN KEY (`empleados_id`)
     REFERENCES `accesos`.`empleados` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = latin1;
-
-
--- -----------------------------------------------------
--- Table `accesos`.`empleado_jornadas`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `accesos`.`empleado_jornadas` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `empleados_id` INT(11) NOT NULL,
-  `jornadas_id` INT(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fkempleado_idx` (`empleados_id` ASC),
-  INDEX `fkjornada_idx` (`jornadas_id` ASC),
-  CONSTRAINT `fkempleado`
-    FOREIGN KEY (`empleados_id`)
-    REFERENCES `accesos`.`empleados` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fkjornada`
-    FOREIGN KEY (`jornadas_id`)
-    REFERENCES `accesos`.`jornadas` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
