@@ -11,3 +11,4 @@ pom.xml
 *.project
 *.MF
 pom.properties
+application.properties
