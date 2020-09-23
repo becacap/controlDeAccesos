@@ -1,5 +1,21 @@
+<<<<<<< Updated upstream
 Manifest-Version: 1.0
-Built-By: jmartins
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+Built-By: zcalvose
+=======
+Built-By: rmanriqu
+>>>>>>> Stashed changes
+=======
+Built-By: rmanriqu
+>>>>>>> feature-fichajes
 Build-Jdk: 1.8.0_261
 Created-By: Maven Integration for Eclipse
 
+=======
+Manifest-Version: 1.0
+Built-By: eirazoqu
+Build-Jdk: 1.8.0_261
+Created-By: Maven Integration for Eclipse
+
+>>>>>>> Stashed changes

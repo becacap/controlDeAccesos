@@ -46,8 +46,18 @@ public class Empleado
 	private Date fecha_baja;
 	
 	@ManyToOne
-	@JoinColumn(name="jornada_id")
+	@JoinColumn(name="jornadas_id")
 	private Jornada jornada;
+
+	public Jornada getJornada()
+	{
+		return jornada;
+	}
+
+	public void setJornada(Jornada jornada)
+	{
+		this.jornada = jornada;
+	}
 
 	public int getId()
 	{

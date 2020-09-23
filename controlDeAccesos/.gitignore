@@ -1,8 +1,13 @@
 
 pom.xml
-/target/*
-.settings
-.classpath
-.project
+
+/target/
+*/target/**
+**/META-INF/
+!.mvn/wrapper/maven-wrapper.jar
+
+*.settings
+*.classpath
+*.project
 *.MF
 pom.properties
