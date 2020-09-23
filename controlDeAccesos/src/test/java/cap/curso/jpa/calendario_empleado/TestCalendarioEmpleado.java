@@ -24,7 +24,7 @@ import cap.curso.jpa.servicios.CalendarioEmpleadoServiceInterface;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = Configuracion.class)
-public class TestUpdate
+public class TestCalendarioEmpleado
 {
 	@Autowired
 	private CalendarioEmpleadoServiceInterface calendarioEmpleado;
